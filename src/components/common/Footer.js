@@ -15,31 +15,31 @@ const Footer = () => {
                         <div>
                             <h2>Quick links</h2>
                             <ul>
-                                <li><Link href="/">Home</Link></li>
-                                <li><Link href="/shop">Shop</Link></li>
-                                <li><Link href="/howitworks">How it works</Link></li>
-                                <li><Link href="/whychooseus">Why choose us</Link></li>
-                                <li><Link href="/connect">Connect</Link></li>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/shop">Shop</Link></li>
+                                <li><Link to="/howitworks">How it works</Link></li>
+                                <li><Link to="/whychooseus">Why choose us</Link></li>
+                                <li><Link to="/connect">Connect</Link></li>
                             </ul>
                         </div>
                         <div>
                             <h2>Market</h2>
                             <ul>
-                                <li><Link href="">All categories</Link></li>
-                                <li><Link href="">Fresh herbs</Link></li>
-                                <li><Link href="">Salads</Link></li>
-                                <li><Link href="">Vegetables</Link></li>
-                                <li><Link href="">The whole organic range</Link></li>
+                                <li><Link to="">All categories</Link></li>
+                                <li><Link to="">Fresh herbs</Link></li>
+                                <li><Link to="">Salads</Link></li>
+                                <li><Link to="">Vegetables</Link></li>
+                                <li><Link to="">The whole organic range</Link></li>
                             </ul>
                         </div>
                         <div>
                             <h2>Help</h2>
                             <ul>
-                                <li><Link href="">Terms & conditions</Link></li>
-                                <li><Link href="">Privacy Policy</Link></li>
-                                <li><Link href="">Refund Policy</Link></li>
-                                <li><Link href="">Terms of Service</Link></li>
-                                <li><Link href="">Shipping Policy</Link></li>
+                                <li><Link to="">Terms & conditions</Link></li>
+                                <li><Link to="">Privacy Policy</Link></li>
+                                <li><Link to="">Refund Policy</Link></li>
+                                <li><Link to="">Terms of Service</Link></li>
+                                <li><Link to="">Shipping Policy</Link></li>
                             </ul>
                         </div>
                         <div>
