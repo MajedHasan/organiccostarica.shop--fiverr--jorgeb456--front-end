@@ -1,0 +1,143 @@
+.box {
+    background: #FFFFFF;
+    padding: 40px 15px;
+    border: 1px solid #D6DDD1;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.box:hover {
+    border: 1px dashed #4B841F;
+    box-shadow: 0px 0px 50px -25px #4B841F;
+}
+
+.box img,
+.modalBox img {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 160px;
+    width: 100%;
+    height: auto;
+}
+
+.box h3,
+.modalBox h3 {
+    color: #020001;
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.box p,
+.modalBox p {
+    color: #606060;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.box p span,
+.modalBox p span {
+    color: #4B841F;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.box button,
+.box label,
+.modalBox button {
+    background: transparent;
+    color: #020001;
+    padding: 10px 35px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: 1px solid #000000;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.box button:hover,
+.box label:hover {
+    background: #4B841F;
+    color: #FFFFFF;
+    border: 1px solid #4B841F;
+}
+
+.modalBox button {
+    background: #4B841F;
+    color: #FFFFFF;
+    border: 1px solid #4B841F;
+}
+
+
+
+/* Modal */
+.modalBox {
+    background: #FFFFFF;
+    padding: 40px 15px;
+    border: 1px dashed #4B841F;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.boxHeading {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    border-bottom: 0.5px solid #B9B9B9;
+}
+
+.boxHeading>h2 {
+    text-transform: uppercase;
+    color: #9C9C9C;
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
+.boxHeading>h2>span {
+    color: #4B841F;
+}
+
+.activeHeading {
+    color: #0B0B0B !important;
+    border-bottom: 3px solid #4B841F;
+}
+
+
+@media only screen and (max-width:991px) {
+    .boxHeading {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/* Vegitable Box */
+.vegitableBox {
+    text-align: center;
+}
+
+.vegitableBox>img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.vegitableBox>p {
+    font-size: 10px;
+    margin-top: 5px;
+    color: #606060;
+}
+
+.vegitableBox>p>span {
+    color: #0B0B0B;
+}
+
+.vegitableBox>h5 {
+    color: #000000;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+}

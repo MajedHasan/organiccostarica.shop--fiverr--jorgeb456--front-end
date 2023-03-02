@@ -1,0 +1,40 @@
+.modifiableBoxImg {
+    animation: spain 5s linear infinite;
+}
+
+@keyframes spain {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.modifiableSpaceIconBoxWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.modifiableSpaceIconBoxWrapper>div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #DCDCDC;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.modifiableSpaceIconBoxWrapper>div>img {
+    max-width: 15px;
+    width: 100%;
+}
+
+.modifiableSpaceIconBoxWrapper>div>span {
+    color: #020001;
+    font-weight: 500;
+    font-size: 18px;
+}
