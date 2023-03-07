@@ -1,0 +1,11 @@
+.boxesFilterContainer {
+    background: #F0F3EE;
+    padding: 25px 0;
+    border-bottom: 2px solid #ffffff;
+}
+
+.boxesFilterContainer>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

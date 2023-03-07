@@ -1,8 +1,15 @@
 import ModifiableSpaceIcon from "../../assets/img/ModifiableSpaceIconActive.png"
+import { BiLeftArrow } from "react-icons/bi"
+import { IoCheckmarkCircleOutline } from "react-icons/io5"
 import styles from "./Boxes.module.css"
+import { Link } from "react-router-dom"
+import { useState } from "react"
 
 
-const Boxes = ({ boxType, setBox, vegitable, setVegitable }) => {
+const Boxes = ({ boxType, setBox, vegitable, setVegitable, isShopPage }) => {
+
+    const [] = useState()
+
     return (
         <>
             <div className="bg-[#F0F3EE] py-16">
@@ -14,52 +21,54 @@ const Boxes = ({ boxType, setBox, vegitable, setVegitable }) => {
                             <img src={require("../../assets/img/Basic-Box.png")} alt="" />
                             <h3>Basic Box</h3>
                             <p>Only <span>$75</span></p>
-                            <label htmlFor="boxModal" onClick={() => setBox("Basic Box")}>Add to cart</label>
+                            <label htmlFor="boxModal" onClick={() => setBox("Basic Box")}>View Box</label>
                         </div>
                         <div className={styles.box}>
                             <img src={require("../../assets/img/Weight-loss.png")} alt="" />
                             <h3>Weight Loss</h3>
                             <p>Only <span>$75</span></p>
-                            <label htmlFor="boxModal" onClick={() => setBox("Weight Loss")}>Add to cart</label>
+                            <label htmlFor="boxModal" onClick={() => setBox("Weight Loss")}>View Box</label>
                         </div>
                         <div className={styles.box}>
                             <img src={require("../../assets/img/Gain-Muscle.png")} alt="" />
                             <h3>Gain Muscle</h3>
                             <p>Only <span>$75</span></p>
-                            <label htmlFor="boxModal" onClick={() => setBox("Gain Muscle")}>Add to cart</label>
+                            <label htmlFor="boxModal" onClick={() => setBox("Gain Muscle")}>View Box</label>
                         </div>
                         <div className={styles.box}>
                             <img src={require("../../assets/img/Gain-Enargy.png")} alt="" />
                             <h3>Gain Energy</h3>
                             <p>Only <span>$75</span></p>
-                            <label htmlFor="boxModal" onClick={() => setBox("Gain Energy")}>Add to cart</label>
+                            <label htmlFor="boxModal" onClick={() => setBox("Gain Energy")}>View Box</label>
                         </div>
                         <div className={styles.box}>
                             <img src={require("../../assets/img/Build-your-box.png")} alt="" />
                             <h3>Basic Box</h3>
                             <p>Only <span>$75</span></p>
-                            <label htmlFor="boxModal" onClick={() => setBox("Basic Box")}>Add to cart</label>
+                            <label htmlFor="boxModal" onClick={() => setBox("Basic Box")}>View Box</label>
                         </div>
                         <div className={styles.box}>
                             <img src={require("../../assets/img/Gain-Enargy.png")} alt="" />
                             <h3>Gain Energy</h3>
                             <p>Only <span>$75</span></p>
-                            <label htmlFor="boxModal" onClick={() => setBox("Gain Energy")}>Add to cart</label>
+                            <label htmlFor="boxModal" onClick={() => setBox("Gain Energy")}>View Box</label>
                         </div>
                         <div className={styles.box}>
                             <img src={require("../../assets/img/Basic-Box.png")} alt="" />
                             <h3>Basic Box</h3>
                             <p>Only <span>$75</span></p>
-                            <label htmlFor="boxModal" onClick={() => setBox("Basic Box")}>Add to cart</label>
+                            <label htmlFor="boxModal" onClick={() => setBox("Basic Box")}>View Box</label>
                         </div>
                         <div className={styles.box}>
                             <img src={require("../../assets/img/Weight-loss.png")} alt="" />
                             <h3>Weight Loss</h3>
                             <p>Only <span>$75</span></p>
-                            <label htmlFor="boxModal" onClick={() => setBox("Weight Loss")}>Add to cart</label>
+                            <label htmlFor="boxModal" onClick={() => setBox("Weight Loss")}>View Box</label>
                         </div>
                     </div>
-                    <button className="mx-auto py-2 px-10 rounded-full text-white bg-[#4B841F] capitalize block">Load more</button>
+                    {
+                        isShopPage ? <button className="mx-auto py-2 px-10 rounded-full text-white bg-[#4B841F] capitalize block">Load more</button> : <Link to="" className="mx-auto py-2 px-10 rounded-full text-white bg-[#4B841F] capitalize block w-fit">See All Boxes</Link>
+                    }
                 </div>
             </div>
             <input type="checkbox" id="boxModal" className="modal-toggle" />
@@ -77,14 +86,52 @@ const Boxes = ({ boxType, setBox, vegitable, setVegitable }) => {
                                 <p>Only <span>$75</span></p>
                                 <button htmlFor="boxModal" onClick={() => setBox("Basic Box")}>Add to cart</button>
                             </div> : <div className={styles.vegitableDetailBox}>
+                                <h2 className="flex items-center gap-2 mb-2 text-sm cursor-pointer" onClick={() => setVegitable(null)}><BiLeftArrow /> Back</h2>
                                 <div className="bg-[#4B841F] text-center text-white py-2 px-4 font-semibold">
-                                    <h3 className="text-2xl uppercase">Benefit the Broccoli</h3>
+                                    <h3 className="text-2xl uppercase">
+                                        {/* Benefit the Broccoli */}
+                                        {
+                                            vegitable
+                                        }
+                                    </h3>
                                 </div>
                                 <div className="bg-[#F1F3EE] py-4 px-5">
                                     <img src={require("../../assets/img/Vegitables/VegitableDetail/VegitableDetail.png")} alt="" className="w-full" />
                                 </div>
                                 <div className="grid grid-cols-2 gap-2 border-[#F1F3EE] border-2 items-center">
-                                    <img src={require("../../assets/img/Vegitables/VegitableDetail/VegitableDetail2.png")} alt="" className="w-full" />
+                                    {
+                                        vegitable === "Carrot" && <img src={require("../../assets/img/Vegitables/Carrot.png")} alt="" className="w-full" />
+                                    }
+                                    {
+                                        vegitable === "Lettuce" && <img src={require("../../assets/img/Vegitables/Carrot.png")} alt="" className="w-full" />
+                                    }
+                                    {
+                                        vegitable === "Potato" && <img src={require("../../assets/img/Vegitables/Potato.png")} alt="" className="w-full" />
+                                    }
+                                    {
+                                        vegitable === "Lettuce" && <img src={require("../../assets/img/Vegitables/Lettuce.png")} alt="" className="w-full" />
+                                    }
+                                    {
+                                        vegitable === "Broccoli" && <img src={require("../../assets/img/Vegitables/Broccoli.png")} alt="" className="w-full" />
+                                    }
+                                    {
+                                        vegitable === "Celery" && <img src={require("../../assets/img/Vegitables/Celery.png")} alt="" className="w-full" />
+                                    }
+                                    {
+                                        vegitable === "Tomato" && <img src={require("../../assets/img/Vegitables/Tomato.png")} alt="" className="w-full" />
+                                    }
+                                    {
+                                        vegitable === "Cucumber" && <img src={require("../../assets/img/Vegitables/Cucumber.png")} alt="" className="w-full" />
+                                    }
+                                    {
+                                        vegitable === "Onion" && <img src={require("../../assets/img/Vegitables/Onion.png")} alt="" className="w-full" />
+                                    }
+                                    {
+                                        vegitable === "Spinach" && <img src={require("../../assets/img/Vegitables/Spinach.png")} alt="" className="w-full" />
+                                    }
+                                    {
+                                        vegitable === "Leek" && <img src={require("../../assets/img/Vegitables/Leek.png")} alt="" className="w-full" />
+                                    }
                                     <div className="text-center">
                                         <h4 className="text-md font-bold capitalize text-[#4B841F]">maximus</h4>
                                         <h4 className="text-md font-semibold leading-4">Class apte taciti ad.</h4>
@@ -99,54 +146,134 @@ const Boxes = ({ boxType, setBox, vegitable, setVegitable }) => {
                             </div>
                             <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-8 mt-3">
                                 <div className={styles.vegitableBox}>
-                                    <img src={require("../../assets/img/Vegitables/Carrot.png")} alt="" onClick={() => setVegitable("")} />
-                                    <p>Category: <span>Natural</span></p>
-                                    <h5>Carrot</h5>
+                                    <input type="checkbox" name="carrot" id="carrot" hidden />
+                                    <label htmlFor="carrot">
+                                        <div>
+                                            <img src={require("../../assets/img/Vegitables/Carrot.png")} alt="" onClick={() => setVegitable("Carrot")} />
+                                            <div>
+                                                <IoCheckmarkCircleOutline />
+                                            </div>
+                                        </div>
+                                        <p>Category: <span>Natural</span></p>
+                                        <h5>Carrot</h5>
+                                    </label>
                                 </div>
                                 <div className={styles.vegitableBox}>
-                                    <img src={require("../../assets/img/Vegitables/Potato.png")} alt="" />
-                                    <p>Category: <span>Natural</span></p>
-                                    <h5>Potato</h5>
+                                    <input type="checkbox" name="Potato" id="Potato" hidden checked />
+                                    <label htmlFor="Potato">
+                                        <div>
+                                            <img src={require("../../assets/img/Vegitables/Potato.png")} alt="" onClick={() => setVegitable("Potato")} />
+                                            <div>
+                                                <IoCheckmarkCircleOutline />
+                                            </div>
+                                        </div>
+                                        <p>Category: <span>Natural</span></p>
+                                        <h5>Potato</h5>
+                                    </label>
                                 </div>
                                 <div className={styles.vegitableBox}>
-                                    <img src={require("../../assets/img/Vegitables/Lettuce.png")} alt="" />
-                                    <p>Category: <span>Natural</span></p>
-                                    <h5>Lettuce</h5>
+                                    <input type="checkbox" name="Lattuce" id="Lattuce" hidden checked />
+                                    <label htmlFor="Lattuce">
+                                        <div>
+                                            <img src={require("../../assets/img/Vegitables/Lettuce.png")} alt="" onClick={() => setVegitable("Lattuce")} />
+                                            <div>
+                                                <IoCheckmarkCircleOutline />
+                                            </div>
+                                        </div>
+                                        <p>Category: <span>Natural</span></p>
+                                        <h5>Lettuce</h5>
+                                    </label>
                                 </div>
                                 <div className={styles.vegitableBox}>
-                                    <img src={require("../../assets/img/Vegitables/Broccoli.png")} alt="" />
-                                    <p>Category: <span>Natural</span></p>
-                                    <h5>Broccoli</h5>
+                                    <input type="checkbox" name="Broccoli" id="Broccoli" hidden checked />
+                                    <label htmlFor="Broccoli">
+                                        <div>
+                                            <img src={require("../../assets/img/Vegitables/Broccoli.png")} alt="" onClick={() => setVegitable("Broccoli")} />
+                                            <div>
+                                                <IoCheckmarkCircleOutline />
+                                            </div>
+                                        </div>
+                                        <p>Category: <span>Natural</span></p>
+                                        <h5>Broccoli</h5>
+                                    </label>
                                 </div>
                                 <div className={styles.vegitableBox}>
-                                    <img src={require("../../assets/img/Vegitables/Celery.png")} alt="" />
-                                    <p>Category: <span>Natural</span></p>
-                                    <h5>Celery</h5>
+                                    <input type="checkbox" name="Celery" id="Celery" hidden checked />
+                                    <label htmlFor="Celery">
+                                        <div>
+                                            <img src={require("../../assets/img/Vegitables/Celery.png")} alt="" onClick={() => setVegitable("Celery")} />
+                                            <div>
+                                                <IoCheckmarkCircleOutline />
+                                            </div>
+                                        </div>
+                                        <p>Category: <span>Natural</span></p>
+                                        <h5>Celery</h5>
+                                    </label>
                                 </div>
                                 <div className={styles.vegitableBox}>
-                                    <img src={require("../../assets/img/Vegitables/Tomato.png")} alt="" />
-                                    <p>Category: <span>Natural</span></p>
-                                    <h5>Tomato</h5>
+                                    <input type="checkbox" name="Tomato" id="Tomato" hidden checked />
+                                    <label htmlFor="Tomato">
+                                        <div>
+                                            <img src={require("../../assets/img/Vegitables/Tomato.png")} alt="" onClick={() => setVegitable("Tomato")} />
+                                            <div>
+                                                <IoCheckmarkCircleOutline />
+                                            </div>
+                                        </div>
+                                        <p>Category: <span>Natural</span></p>
+                                        <h5>Tomato</h5>
+                                    </label>
                                 </div>
                                 <div className={styles.vegitableBox}>
-                                    <img src={require("../../assets/img/Vegitables/Cucumber.png")} alt="" />
-                                    <p>Category: <span>Natural</span></p>
-                                    <h5>Cucumber</h5>
+                                    <input type="checkbox" name="Tomato" id="Tomato" hidden checked />
+                                    <label htmlFor="Tomato">
+                                        <div>
+                                            <img src={require("../../assets/img/Vegitables/Cucumber.png")} alt="" onClick={() => setVegitable("Tomato")} />
+                                            <div>
+                                                <IoCheckmarkCircleOutline />
+                                            </div>
+                                        </div>
+                                        <p>Category: <span>Natural</span></p>
+                                        <h5>Cucumber</h5>
+                                    </label>
                                 </div>
                                 <div className={styles.vegitableBox}>
-                                    <img src={require("../../assets/img/Vegitables/Onion.png")} alt="" />
-                                    <p>Category: <span>Natural</span></p>
-                                    <h5>Onion</h5>
+                                    <input type="checkbox" name="Onion" id="Onion" hidden checked />
+                                    <label htmlFor="Onion">
+                                        <div>
+                                            <img src={require("../../assets/img/Vegitables/Onion.png")} alt="" onClick={() => setVegitable("Onion")} />
+                                            <div>
+                                                <IoCheckmarkCircleOutline />
+                                            </div>
+                                        </div>
+                                        <p>Category: <span>Natural</span></p>
+                                        <h5>Onion</h5>
+                                    </label>
                                 </div>
                                 <div className={styles.vegitableBox}>
-                                    <img src={require("../../assets/img/Vegitables/Spinach.png")} alt="" />
-                                    <p>Category: <span>Natural</span></p>
-                                    <h5>Spinach</h5>
+                                    <input type="checkbox" name="Spinach" id="Spinach" hidden checked />
+                                    <label htmlFor="Spinach">
+                                        <div>
+                                            <img src={require("../../assets/img/Vegitables/Spinach.png")} alt="" onClick={() => setVegitable("Spinach")} />
+                                            <div>
+                                                <IoCheckmarkCircleOutline />
+                                            </div>
+                                        </div>
+                                        <p>Category: <span>Natural</span></p>
+                                        <h5>Spinach</h5>
+                                    </label>
                                 </div>
                                 <div className={styles.vegitableBox}>
-                                    <img src={require("../../assets/img/Vegitables/Leek.png")} alt="" />
-                                    <p>Category: <span>Natural</span></p>
-                                    <h5>Leek</h5>
+                                    <input type="checkbox" name="Leek" id="Leek" hidden checked />
+                                    <label htmlFor="Leek">
+                                        <div>
+                                            <img src={require("../../assets/img/Vegitables/Leek.png")} alt="" onClick={() => setVegitable("Leek")} />
+                                            <div>
+                                                <IoCheckmarkCircleOutline />
+                                            </div>
+                                        </div>
+                                        <p>Category: <span>Natural</span></p>
+                                        <h5>Leek</h5>
+                                    </label>
                                 </div>
                             </div>
                         </div>

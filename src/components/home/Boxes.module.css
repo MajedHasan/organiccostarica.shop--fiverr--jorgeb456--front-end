@@ -119,23 +119,50 @@
     text-align: center;
 }
 
-.vegitableBox>img {
+.vegitableBox>label>div {
+    position: relative;
+    cursor: pointer;
+}
+
+.vegitableBox>label>div>div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.vegitableBox>label>div>div>svg {
+    font-size: 35px;
+    color: white;
+}
+
+.vegitableBox>input:checked~label>div>div {
+    display: flex;
+}
+
+.vegitableBox img {
     width: 100%;
     height: auto;
     cursor: pointer;
 }
 
-.vegitableBox>p {
+.vegitableBox>label>p {
     font-size: 10px;
     margin-top: 5px;
     color: #606060;
 }
 
-.vegitableBox>p>span {
+.vegitableBox>label>p>span {
     color: #0B0B0B;
 }
 
-.vegitableBox>h5 {
+.vegitableBox>label>h5 {
     color: #000000;
     font-weight: 600;
     font-size: 20px;
